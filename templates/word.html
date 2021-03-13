@@ -6,12 +6,13 @@
 </head>
 <body>
 <h1>Word Count</h1>
-<form action="{% url 'wordcount' %}">
+<a href="{% url 'help' %}">help</a>
+<form action="{% url 'count' %}">
     <textarea cols="100" rows="10" name="fulltext"></textarea>
     <p></p>
     <input type="submit" value="count!" />
-<a href="{% url 'help' %}">help page</a>
-
 </form>
+
+
 </body>
 </html>

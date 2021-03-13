@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Word Count: {{ len }} words in your text</h1>
+<h1> Word Count: {{ len }} words in your text</h1>
 <a href="{% url 'home' %}">restart count</a>
-<a href="{% url 'help' %}">help page</a>
-<h2>Your words:</h2>
-{{ words }}
+<br/>
+<a href="{% url 'help' %}">help</a>
+<form action="{% url 'count' %}">
+    <textarea cols="100" rows="10" name="fulltext">{{ words }}</textarea>
+    <p></p>
+    <input type="submit" value="count!" />
+</form>
+
+<hr/>
+{% for word,count in worddict %}
+    {{ word }} - {{ count }}
+    <br />
+{% endfor %}
+
+
 </body>
 </html>
